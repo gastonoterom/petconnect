@@ -1,4 +1,3 @@
-# Create a postgres 15 database
 services:
     postgres:
         image: postgres:15
