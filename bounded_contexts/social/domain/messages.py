@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-
 from bounded_contexts.social.domain.enums import ProfileType
 from bounded_contexts.social.domain.value_objects import (
     ProfileData,

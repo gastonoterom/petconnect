@@ -1,7 +1,7 @@
 import pytest
 from dependency_injector.wiring import inject, Provide
 
-from bounded_contexts import CreatePet
+from bounded_contexts.pets.domain.messages import CreatePet
 from bounded_contexts.pets.repository.pet_repositories import PetsRepository
 from bounded_contexts.social.handlers.tests.base_social_helpers import (
     create_test_individual,
@@ -52,7 +52,7 @@ async def test_organizational_profile_cant_create_pet(
         message_bus=testing_message_bus, admin_profile_id=admin_id
     )
 
-    with pytest.raises(Exception) as e:
+    with pytest.raises(Exception):
         await testing_message_bus.handle(
             CreatePet(
                 entity_id="pet_id",

@@ -1,21 +1,10 @@
 from dependency_injector.wiring import inject, Provide
-
-from bounded_contexts import (
-    CreateIndividual,
-    create_individual_handler,
-    create_pet_owner_handler,
-    CreatePet,
-    RegisterPetLoss,
-)
 from bounded_contexts.pets.domain.entities import OwnerProfile, Pet
+from bounded_contexts.pets.domain.messages import CreatePet, RegisterPetLoss
 from bounded_contexts.pets.domain.value_objects import Location
 from bounded_contexts.pets.repository.pet_repositories import (
     OwnersRepository,
     PetsRepository,
-)
-from bounded_contexts.social.domain.value_objects import AccountData, ProfileData
-from bounded_contexts.social.handlers.tests.base_social_helpers import (
-    test_individual_data,
 )
 from common.message_bus import MessageBus
 from common.unit_of_work import UnitOfWork

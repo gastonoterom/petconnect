@@ -14,7 +14,7 @@ from dependencies.dependency_kinds import PetDependencyKind
 
 
 @inject
-async def register_pet_as_lost_handler(
+async def register_pet_loss_handler(
     command: RegisterPetLoss,
     uow: UnitOfWork,
     pets_repository: PetsRepository = Provide[PetDependencyKind.pets_repository],

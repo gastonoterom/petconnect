@@ -1,6 +1,6 @@
 import pytest
 from dependency_injector.wiring import Provide, inject
-from bounded_contexts import RegisterPetLoss
+from bounded_contexts.pets.domain.messages import RegisterPetLoss
 from bounded_contexts.pets.domain.value_objects import Location
 from bounded_contexts.pets.handlers.tests.base_pet_helpers import (
     create_test_pet,

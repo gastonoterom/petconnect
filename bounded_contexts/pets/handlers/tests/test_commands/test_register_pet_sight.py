@@ -1,6 +1,6 @@
 import pytest
 from dependency_injector.wiring import inject, Provide
-from bounded_contexts import RegisterPetSight
+from bounded_contexts.pets.domain.messages import RegisterPetSight
 from bounded_contexts.pets.handlers.tests.base_pet_helpers import (
     create_test_pet,
     get_pet,
