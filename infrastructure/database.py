@@ -4,13 +4,10 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine, Asyn
 from sqlalchemy.orm import registry
 
 
-connection_url = "postgresql+asyncpg://postgres:postgres@localhost/petconnect_events_testing?port=5439"
+connection_url: str | None = os.environ.get("DB_CONNECTION_URL")
 
-if os.environ.get("ENVIRONMENT") == "production":
-    connection_url = (
-        "postgresql+asyncpg://postgres:postgres@localhost/petconnect_events?port=5439"
-    )
-
+if not connection_url:
+    raise Exception("DB_CONNECTION_URL environment variable is not set")
 
 engine = create_async_engine(
     url=connection_url,

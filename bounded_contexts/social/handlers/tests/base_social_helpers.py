@@ -141,6 +141,10 @@ async def create_test_individual(
     message_bus: MessageBus,
     entity_id: str = test_individual_data.TEST_ENTITY_ID,
     email: str | None = None,
+    password: str = test_individual_data.TEST_PASSWORD,
+    full_name: str = test_individual_data.TEST_FULL_NAME,
+    government_id: str = test_individual_data.TEST_GOVT_ID,
+    phone_number: str = test_individual_data.TEST_PHONE_NUMBER,
 ) -> None:
     if email is None:
         email = f"{entity_id}@test.com"
@@ -148,13 +152,13 @@ async def create_test_individual(
     command = CreateIndividual(
         account_data=AccountData(
             email=email,
-            password=test_individual_data.TEST_PASSWORD,
+            password=password,
         ),
         profile_data=ProfileData(
             entity_id=entity_id,
-            full_name=test_individual_data.TEST_FULL_NAME,
-            government_id=test_individual_data.TEST_GOVT_ID,
-            phone_number=test_individual_data.TEST_PHONE_NUMBER,
+            full_name=full_name,
+            government_id=government_id,
+            phone_number=phone_number,
         ),
     )
 

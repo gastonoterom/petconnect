@@ -14,8 +14,12 @@ class AuthDependencyKind(str, Enum):
 
 @unique
 class SocialDependencyKind(str, Enum):
+    # Repositories
     individuals_repository = "individuals_repository"
     organizations_repository = "organizations_repository"
+
+    # View factories
+    profile_view_factory = "profile_view_factory"
 
 
 @unique

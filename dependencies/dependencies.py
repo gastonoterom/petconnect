@@ -15,6 +15,9 @@ from bounded_contexts.social.repository.adapters.sqlalchemy import (
     AlchemyIndividualsRepository,
     AlchemyOrganizationsRepository,
 )
+from bounded_contexts.social.views.factories.adapters.sqlalchemy_profile_view_factory import (
+    AlchemyProfileViewFactory,
+)
 from common.unit_of_work import UnitOfWork
 
 
@@ -45,6 +48,8 @@ class DependencyContainer(containers.DeclarativeContainer):
 
     individuals_repository = providers.Singleton(AlchemyIndividualsRepository)
     organizations_repository = providers.Singleton(AlchemyOrganizationsRepository)
+
+    profile_view_factory = providers.Singleton(AlchemyProfileViewFactory)
 
     # Pet dependencies
     owners_repository = providers.Singleton(AlchemyOwnersRepository)

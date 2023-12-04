@@ -2,11 +2,11 @@ from enum import Enum
 
 
 class OrganizationRole(Enum):
-    ADMIN = "admin"
-    MANAGER = "manager"
-    VOLUNTEER = "volunteer"
+    ADMIN = "ADMIN"
+    MANAGER = "MANAGER"
+    VOLUNTEER = "VOLUNTEER"
 
 
 class ProfileType(Enum):
-    INDIVIDUAL = "individual"
-    ORGANIZATIONAL = "organizational"
+    INDIVIDUAL = "INDIVIDUAL"
+    ORGANIZATIONAL = "ORGANIZATIONAL"
